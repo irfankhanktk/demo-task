@@ -10,7 +10,6 @@ setItems,
 }) => {
   const [open, setOpen] = React.useState(false);
 
-  console.log('value:::', items);
   return (
     <DropDownPicker
       open={open}
