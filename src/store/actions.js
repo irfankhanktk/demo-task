@@ -7,7 +7,6 @@ export const ACTIONS = {
    const diff= moment().diff(x.started_at,'days');
    return diff===0;
   });
-  console.log('todayTasks :',todayTasks);
 
   let new_list = todayTasks.sort((a,b)=>moment(a.started_at).diff(b.started_at,'hours')).reduce(function (acc, obj) {
     let key = moment(obj['started_at']).format('HH');
@@ -38,6 +37,7 @@ export const ACTIONS = {
   const result = Object.keys(new_list).map((key) => ({ [key]: new_list[key] }));
   return result;
  },
+ 
  fetchCurrentYearTasks:()=>{
   let merged=[...CONSTANTS.social, ...CONSTANTS.work];
   const monthTasks =merged.filter(x=>{
