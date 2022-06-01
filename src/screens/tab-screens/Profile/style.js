@@ -20,8 +20,7 @@ export const styles = StyleSheet.create({
     color: 'blue',
   },
   pinchableImage: {
-    height: 200,
-    width: '100%',
+    flex: 1,
     backgroundColor: 'red',
   },
 });

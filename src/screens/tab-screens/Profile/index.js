@@ -49,13 +49,14 @@ const Profile = props => {
   //       setWork(arr);
   //     };
   //   }, []);
-  const [scale, setScale] = useState(useRef(new Animated.Value(3)).current);
+  const [scale, setScale] = useState(1);
+  const [count, setCount] = useState(0);
   const onHandlerStateChange = event => {
-    console.log({scale});
-    setScale(new Animated.Value(event.nativeEvent.scale));
-    console.log(event.nativeEvent);
+    // console.log({event});
+    // setScale(new Animated.Value(event.nativeEvent.scale));
+    // console.log(event.nativeEvent);
   };
-  const onGestureEvent = Animated.event(
+  const onGestureEvent = event => {
     [
       {
         nativeEvent: {
@@ -63,10 +64,10 @@ const Profile = props => {
         },
       },
     ],
-    {
-      useNativeDriver: true,
-    },
-  );
+      {
+        useNativeDriver: true,
+      };
+  };
 
   return (
     <View style={styles.container}>
@@ -173,12 +174,26 @@ const Profile = props => {
       </PinchGestureHandler> */}
       <PinchGestureHandler
         onGestureEvent={onGestureEvent}
-        onHandlerStateChange={onHandlerStateChange}>
-        <Animated.View
+        onEnded={event => {
+          if (event.nativeEvent.scale < 1) {
+            if (count > 0) {
+              setCount(count - 1);
+              console.log(count - 1, 'zoomin');
+            }
+          } else {
+            if (count < 3) {
+              setCount(count + 1);
+              console.log(count + 1, 'zoomout');
+            }
+          }
+        }}
+        // onHandlerStateChange={onHandlerStateChange}
+      >
+        <View
           style={[
             styles.pinchableImage,
             {
-              transform: [{perspective: 200}, {scale: scale}],
+              //   transform: [{perspective: 200}, {scale: scale}],
             },
           ]}
         />
