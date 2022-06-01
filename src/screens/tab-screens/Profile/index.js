@@ -4,35 +4,6 @@ import {PinchGestureHandler, ScrollView} from 'react-native-gesture-handler';
 import {styles} from './style.js';
 
 const Profile = props => {
-  //   const [work, setWork] = useState([
-  //     {
-  //       started_at: '2022-05-31 08:00:00',
-  //       ended_at: '2022-05-31 08:40:00',
-  //       title: 'Meeting with investor',
-  //     },
-  //     {},
-  //     {},
-  //     {},
-  //   ]);
-  //   const [time, setTime] = useState([{}, {}, {}, {}]);
-  //   const [social, setSocial] = useState([{}, {}, {}, {}]);
-  //   useEffect(() => {
-  //     return () => {
-  //       console.log('width', Dimensions.get('window').width / 20);
-  //       let num = 0;
-  //       let time = moment(work[0].started_at).format('HH:mm');
-  //       let arr = [...work];
-  //       arr.forEach(item => {
-  //         if (time < 5) {
-  //           item['time'] = moment(time).add(1, 'hours');
-  //           num = num + 1;
-  //         }
-  //       });
-  //       console.log({arr});
-
-  //       setWork(arr);
-  //     };
-  //   }, []);
   const [scale, setScale] = useState(1);
   const [count, setCount] = useState(0);
   const [enable, setEnable] = useState(true);

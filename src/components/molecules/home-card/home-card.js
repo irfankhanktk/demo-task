@@ -14,20 +14,20 @@ export const HomeCard = ({ item, index }) => {
 
   const [leftIndex, setLeftIndex] = React.useState(null);
   const [rightIndex, setRightIndex] = React.useState(null);
-
+  console.log('item?.h:',item);
   return (
-    <View onPress={() => { }} style={{ height: mvs(150), marginBottom: 0, }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: mvs(150) }}>
+    <View onPress={() => { }} style={{ height: itemData?.h, marginBottom: 0, }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: '100%' }}>
         <TouchableOpacity activeOpacity={1} style={{ flex: 1, }}>
-          {itemData?.social?.map((ele, ind) => {
-            const bool = ele?.type === 'social';
+          {itemData?.work?.map((ele, ind) => {
+            const bool = ele?.type === 'work';
             const textStyle = { color: bool ? colors.text : colors.white, };
             // const diff = moment(ele.started_at).diff(,'hours');
             return (
-              <TouchableOpacity onPress={() => setLeftIndex(leftIndex == (itemData?.social?.length - 1) ? 0 : (leftIndex + 1))} style={{ zIndex: ind === leftIndex ? 1001 : null, position: 'absolute', top: ele?.top, height: mvs(ele?.height), width: mvs(140), borderWidth: 1, backgroundColor: bool ? colors?.secondary : colors.primary, ...styles.card }}>
+              <TouchableOpacity onPress={() => setLeftIndex(leftIndex == (itemData?.work?.length - 1) ? 0 : (leftIndex + 1))} style={{ zIndex: ind === leftIndex ? 1001 : null, position: 'absolute', top: ele?.top, height: mvs(ele?.height), width: mvs(140), borderWidth: 1, backgroundColor: bool ? colors?.secondary : colors.primary, ...styles.card }}>
                 <Bold style={textStyle} label={ele?.title} />
-                <Medium style={textStyle} label={`${moment(ele?.started_at).format('DD/MM/YYYY')}`} />
-                <Regular style={textStyle} label={`${moment(ele?.started_at).format('HH:mm')} - ${moment(ele?.ended_at).format('HH:mm')}`} />
+                {/* <Medium style={textStyle} label={`${moment(ele?.started_at).format('DD/MM/YYYY')}`} />
+                <Regular style={textStyle} label={`${moment(ele?.started_at).format('HH:mm')} - ${moment(ele?.ended_at).format('HH:mm')}`} /> */}
               </TouchableOpacity>
             )
           })}
@@ -39,15 +39,15 @@ export const HomeCard = ({ item, index }) => {
           <View style={{ height: mvs(8), width: mvs(8), borderRadius: mvs(4), backgroundColor: colors.blue }} />
         </View>
         <TouchableOpacity  activeOpacity={1} style={{ flex: 1, alignItems: 'flex-end', }}>
-          {itemData?.work?.map((ele, ind) => {
+          {itemData?.social?.map((ele, ind) => {
             const bool = ele?.type === 'social';
             const textStyle = { color: bool ? colors.text : colors.white };
             // const diff = moment(ele.started_at).diff(,'hours');
             return (
-              <TouchableOpacity onPress={() => setRightIndex(rightIndex == (itemData?.work?.length - 1) ? 0 : (rightIndex + 1))} style={{ zIndex: ind === rightIndex ? 1001 : null, position: 'absolute', height: mvs(100), width: mvs(140), backgroundColor: bool ? colors?.secondary : colors.green, ...styles.card }}>
+              <TouchableOpacity onPress={() => setRightIndex(rightIndex == (itemData?.social?.length - 1) ? 0 : (rightIndex + 1))} style={{ zIndex: ind === rightIndex ? 1001 : null, position: 'absolute', height: mvs(100), width: mvs(140), backgroundColor: bool ? colors?.secondary : colors.green, ...styles.card }}>
                 <Bold style={textStyle} label={ele?.title} />
-                <Medium style={textStyle} label={`${moment(ele?.started_at).format('DD/MM/YYYY')}`} />
-                <Regular style={textStyle} label={`${moment(ele?.started_at).format('HH:mm')} - ${moment(ele?.ended_at).format('HH:mm')}`} />
+                {/* <Medium style={textStyle} label={`${moment(ele?.started_at).format('DD/MM/YYYY')}`} />
+                <Regular style={textStyle} label={`${moment(ele?.started_at).format('HH:mm')} - ${moment(ele?.ended_at).format('HH:mm')}`} /> */}
               </TouchableOpacity>
             )
           })}
