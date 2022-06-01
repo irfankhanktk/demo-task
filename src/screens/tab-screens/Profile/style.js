@@ -4,9 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    justifyContent: 'center',
-
-    // flexDirection: 'row',
+    // justifyContent: 'center',
     // alignItems: 'center',
   },
   lables: {
@@ -20,7 +18,10 @@ export const styles = StyleSheet.create({
     color: 'blue',
   },
   pinchableImage: {
-    flex: 1,
     backgroundColor: 'red',
+    height: 150,
+    width: 150,
+    alignSelf: 'center',
+    marginVertical: 100,
   },
 });
