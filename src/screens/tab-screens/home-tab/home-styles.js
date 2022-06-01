@@ -14,8 +14,8 @@ export const Home_Styles = StyleSheet.create({
   header:{ flexDirection: 'row-reverse', },
   contain_container:{
     flexGrow:1,
-    paddingHorizontal: mvs(5),
-    paddingBottom:mvs(50),
+    paddingHorizontal: mvs(10),
+    // paddingBottom:mvs(50),
   },
   dropdown_container:{
     width: '35%' 

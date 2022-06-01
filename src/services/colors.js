@@ -2,7 +2,13 @@
  * @providesModule Colors
  */
 const colors = {
+
+
   //new color scheme
+  green:'#0EBE9E',
+  blue:'#2DAAE1',
+
+
   headerTitle:'#424753',
   textColor:'#54585D',
   black: '#000000',
@@ -19,7 +25,7 @@ const colors = {
   input_label: '#13092C',
   input_placehoder:'#BBC0C3',// '#DADBDA',
   input_txt_color: '#6f98ff',
-  border: '#707070',
+  border:'#B0B0B0', //'#707070',
   //white
   white: '#FFFFFF',
   ypsDark: '#47546E',
@@ -30,7 +36,6 @@ const colors = {
 
   //Buttons
   headerTitle: '#424753',
-  green: '#24C661',
   pink: '#EA1C8B',
   sky: '#00AFEF',
   gray: '#E8E8E8',

@@ -7,7 +7,7 @@ const createShareLink = refId => {
   let shareLink = '';
   try {
     shareLink = `${IP}/${refId}`;
-  } catch (err) {}
+  } catch (err) { }
   return shareLink;
 };
 // import Geocoder from "react-native-geocoding";
@@ -59,12 +59,12 @@ const SERVICES = {
       }
     }
   },
-  _capitalizeFirst:(str)=>(str.charAt(0).toUpperCase() + str.slice(1)),
+  _capitalizeFirst: (str) => (str.charAt(0).toUpperCase() + str.slice(1)),
   _returnStringify: (data) => JSON.stringify(data),
-  
-  _share:async (description = '',url) => {
+
+  _share: async (description = '', url) => {
     try {
-      console.log('url::',url);
+      console.log('url::', url);
       const result = await Share.share({
         // message:description?description:url,
         // url: url,
@@ -231,11 +231,38 @@ const SERVICES = {
       throw new Error(error);
     }
   },
-  findOnlineUser:(users={},user_id)=>{
-    console.log('usersssss:::',users);
-   return Object.keys(users)?.find((key, index)=>
-   users[key]?.user_id===user_id
+  findOnlineUser: (users = {}, user_id) => {
+    console.log('usersssss:::', users);
+    return Object.keys(users)?.find((key, index) =>
+      users[key]?.user_id === user_id
     );
+  },
+  // Bubble sort Implementation using Javascript
+
+
+  // Creating the bblSort function
+  bblSort: (arr = []) => {
+    Object.keys(arr).map((key,i) =>{ 
+     
+    });
+    for (var i = 0; i < arr.length; i++) {
+
+      // Last i elements are already in place
+      for (var j = 0; j < (arr.length - i - 1); j++) {
+
+        // Checking if the item at present iteration
+        // is greater than the next iteration
+        if (arr[j]?.key *1> arr[j + 1]?.key*1) {
+
+          // If the condition is true then swap them
+          var temp = arr[j]
+          arr[j] = arr[j + 1]
+          arr[j + 1] = temp
+        }
+      }
+
+    }
+    return arr;
   }
 };
 

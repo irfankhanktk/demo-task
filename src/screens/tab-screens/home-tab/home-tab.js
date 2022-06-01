@@ -20,7 +20,7 @@ import moment from 'moment';
 const Home = (props) => {
   const { colors } = useTheme();
   const [leftValue, setLeftValue] = React.useState('work');
-  const [selectedValue, setSelectedValue] = React.useState(1);// 0 for today, 1 for current month, 2 for current year
+  const [selectedValue, setSelectedValue] = React.useState(0);// 0 for today, 1 for current month, 2 for current year
   const [leftItems, setLeftItems] = React.useState([
     { label: 'Work', value: 'work' },
     { label: 'Irfan', value: 'irfan' }
@@ -84,6 +84,7 @@ const Home = (props) => {
 
       <View style={styles.body}>
         <FlatList
+          initialNumToRender={10}
           data={taskList}
           contentContainerStyle={styles.contain_container}
           keyExtractor={(item, index) => index.toString()}

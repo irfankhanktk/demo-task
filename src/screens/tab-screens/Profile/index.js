@@ -11,7 +11,6 @@ import {
 import {styles} from './style.js';
 import {StyleSheet} from 'react-native';
 import moment from 'moment';
-import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
 import {
   PanGestureHandler,
   PinchGestureHandler,
